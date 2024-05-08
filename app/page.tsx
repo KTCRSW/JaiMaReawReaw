@@ -29,11 +29,11 @@ export default function Home() {
       const amountTotal = parseFloat(amount);
       const payLoad = generatePayload(mobileNumber, { amount: amountTotal });
       const options = {
-        type: "svg",
+        type: "svg" as const,
         color: { dark: "#000000", light: "#ffffff" },
         scale: 0.5,
       };
-      QRcode.toString(payLoad, options, (err: any, svg: any) => {
+      QRcode.toString(payLoad, options, (err, svg) => {
         if (err) {
           console.log("Reason: ", err);
         } else {
